@@ -12,7 +12,7 @@ void printfArr(int* arr, int len)
     int i;
 
     for (i = 0; i < len; ++i) {
-        printf_s("%d\n", arr[i]);
+        printf_s("%-6d", arr[i]);
     }
 }
 
@@ -54,4 +54,30 @@ void swap(int * a, int * b) {
     temp = *a;
     *a = *b;
     *b = temp;
+}
+
+long square(int x) {
+    return x * x;
+}
+
+long factorial(int x) {
+
+    long result = 1;
+    for (; x >= 1; --x)
+    {
+        result *= x;
+    }
+
+    return result;
+}
+
+void stringCopy(char *copyfrom, char *copyto) {
+
+    while (*copyfrom != '\0')
+    {
+        *copyto = *copyfrom;
+        copyfrom++;
+        copyto++;
+    }
+    *copyto = '\0';
 }

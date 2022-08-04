@@ -15,7 +15,7 @@ void narcissus_flower_number()
 
         if (a * a * a + b * b * b + c * c * c == i)
         {
-            printf("%d��ˮ�ɻ���\n", i);
+            printf("%d????????\n", i);
         }
     }
 }
@@ -24,7 +24,7 @@ void multiplication_table(int len) {
 
     int i, j;
 
-    printf("������ �˷���Χ��");
+    printf("?????? ?????��??");
     scanf_s("%d", &len);
 
     for (i = 1; i <= len; ++i)
@@ -49,15 +49,15 @@ void palindrome_string(char * str)
         }
     }
     if (low < high) {
-        printf("%s���ǻ����ַ���", str);
+        printf("%s????????????", str);
     }
     else {
-        printf("%s�ǻ����ַ���", str);
+        printf("%s??????????", str);
     }
 
 }
 
-void string_matching_force(char * mainString, char * subString)
+void  string_matching_force(char * mainString, char * subString)
 {
 
     int i, j;
@@ -74,7 +74,7 @@ void string_matching_force(char * mainString, char * subString)
         if (j == subLen) break;
     }
 
-    /*  ��������
+    /*  ????????
         for ( i = 0,j = 0; i < mainLen && j < subLen; ++i) {
             if (mainString[i] == subString[j]){
                 ++j;
@@ -86,10 +86,10 @@ void string_matching_force(char * mainString, char * subString)
     */
 
     if (j == subLen) {
-        printf("�ַ�����ԭ�ַ����е�λ���ǣ�%d -- %d", i + 1, i + j);
+        printf("??????????????��?��?????%d -- %d", i + 1, i + j);
     }
     else {
-        printf("�ַ�����ƥ��");
+        printf("??????????");
     }
 
 
@@ -106,7 +106,7 @@ void kmp(char * mainString, char * subString)
     int j = -1;
     next[0] = -1;
 
-    //  ����ģʽ���õ�ģʽ����next����
+    //  ?????????????????next????
     while (i < subLen) {
         if (j == -1 || subString[i] == subString[j]) {
             i++;
@@ -118,7 +118,7 @@ void kmp(char * mainString, char * subString)
         }
     }
 
-    //  iָ�����������ݣ�jָ��ģʽ������next������ݡ�
+    //  i??????????????j???????????next????????
     i = 0;
     j = 0;
     while (i < mainLen && j < subLen) {

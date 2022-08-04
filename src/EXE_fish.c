@@ -505,4 +505,64 @@ void fish_Input_Jiugong() {
     }
 }
 
+double fish_selfpow(double x, double y) {
+
+    double result = 1;
+
+    while(y--)
+    {
+        result *= x;
+    }
+
+    return result;
+}
+
+void fish_Sequential_Output_pointer(int *pa, int *pb, int *pc) {
+
+    if (*pa < *pb)
+    {
+        swap(pa,pb);
+    }
+
+    if (*pa < *pc)
+    {
+        swap(pa,pc);
+    }
+
+    if (*pb < *pc)
+    {
+        swap(pb,pc );
+    }
+
+}
+
+void fish_maxOfArray_pointer(int *arr, int len, int *max, int *min) {
+
+    int i;
+    *max = *min = arr[0];
+    for (i = 0; i < len; ++i)
+    {
+        if (*(arr + i) > *max)
+        {
+            *max = *(arr + i);
+        }
+        if (*(arr + i) < *min)
+        {
+            *min = *(arr + i);
+        }
+    }
+}
+
+void fish_reverseArray(int * arr, int len) {
+
+    int * low, * high;
+    low = arr;
+    high = arr + len - 1;
+
+    while (low < high)
+    {
+        swap(low++, high--);
+    }
+}
+
 

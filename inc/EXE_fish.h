@@ -181,8 +181,37 @@ void fish_maxOfmatrix();
  */
 void fish_Input_Jiugong();
 
+/**
+ * 求x的y次方
+ * @param x
+ * @param y
+ * @return
+ */
+double fish_selfpow(double x, double y);
 
+/**
+ * 按大小顺序输出a、b、c
+ * @param pa            a的指针
+ * @param pb            b的指针
+ * @param pc            c的指针
+ */
+void fish_Sequential_Output_pointer(int * pa, int * pb, int * pc);
 
+/**
+ * 数组反向存储
+ * @param arr           数组
+ * @param len           数组长度
+ */
+void fish_reverseArray_pointer(int * arr, int len);
+
+/**
+ * 找出数组中最大值最小值
+ * @param[in] arr           数组
+ * @param[in] len           数组长度
+ * @param[out] max          最大值
+ * @param[out] min          最小值
+ */
+void fish_maxOfArray_pointer(int * arr, int len, int * max, int * min);
 
 
 

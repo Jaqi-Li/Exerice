@@ -58,6 +58,27 @@ int dayOfmonth(int month);
  */
 void swap(int * a, int * b);
 
+/**
+ * 计算一个整数的平方
+ * @param x
+ * @return
+ */
+long square(int x);
+
+/**
+ * 计算x的阶乘： x! = x * (x-1) * (x-2)....
+ * @param x
+ * @return
+ */
+long factorial(int x);
+
+/**
+ * 字符串复制
+ * @param copyfrom      拷贝字符串指针
+ * @param copyto        待拷贝字符串指针
+ */
+void stringCopy(char * copyfrom, char * copyto);
+
 
 
 #endif //EXERICE_EXE_UTIL_H

@@ -30,4 +30,19 @@ void two_dimensional_pointer_array();
  *           让max2函数调用Max函数。
  */
 void function_pointer();
+
+/**
+ * 对二维数组和指针的理解：
+ * https://www.zhihu.com/question/460166982
+ */
+void print_twoDimArray_pointer();
+
+/**
+ * input specified row and col to show the element of the two-dimension Array.
+ * @param row         row
+ * @param col         col
+ */
+void print_SpecifiedElemOftwoDimArray(int row, int col);
+
+
 #endif //EXERICE_EXE_POINTER_H
