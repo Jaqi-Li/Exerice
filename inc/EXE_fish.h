@@ -225,6 +225,13 @@ int fish_process_min(int x, int y);
 int fish_process_add(int x, int y);
 void fish_process_test();
 
+/**
+ * 将字符串按照字母顺序(由小到大)输出。
+ * @param str           字符指针数组
+ * @param len           指针数组长度
+ */
+void fish_sortPrintfStringByInitials(char * str[], int len);
+
 
 
 

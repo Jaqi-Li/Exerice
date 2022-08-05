@@ -592,6 +592,27 @@ void fish_process_test() {
     fish_process(2,3,padd);
 }
 
+void fish_sortPrintfStringByInitials(char **str, int len) {
+    int i, j;
+    char * temp;
+    for (i = 0; i < len - 1; ++i)
+    {
+        for (j = 0; j < len - i - 1; ++j)
+        {
+            if (strcmp(*(str + j),*(str + j + 1)) > 0)
+            {
+                temp = *(str + j);
+                *(str + j) = *(str + j + 1);
+                *(str + j + 1) = temp;
+            }
+        }
+    }
+
+    for (i = 0; i < len; ++i)
+    {
+        printf("%s\n",*(str + i));
+    }
+}
 
 
 

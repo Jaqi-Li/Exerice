@@ -8,6 +8,10 @@
 
 int main() {
 
+    char *name[] = {"q", "b", "c", "a"};
+    int len = 4;
+    fish_sortPrintfStringByInitials(name,len);
+
     return 0;
 }
 

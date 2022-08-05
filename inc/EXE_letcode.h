@@ -70,13 +70,13 @@ void letcode_88(int choice);
       给定 target = 5，返回 true。
       给定 target = 20，返回 false。
  *
- * @param matrix
- * @param matrixSize
- * @param matrixColSize
- * @param target
+ * @param matrix                    二维数组(int 指针数组)
+ * @param matrixSize                二维数组行数
+ * @param matrixColSize             二维数组列数(int 数组)  行元素
+ * @param target                    目标指针
  * @return
  */
-int letcode_offer_04(int** matrix, int matrixSize, int* matrixColSize, int target);
+int letcode_offer_04(int * matrix[], int matrixSize, int* matrixColSize, int target);
 
 
 #endif //EXERICE_EXE_LETCODE_H
