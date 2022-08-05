@@ -232,11 +232,10 @@ void fish_process_test();
  */
 void fish_sortPrintfStringByInitials(char * str[], int len);
 
-
+/**
+ * 投票系统
+ */
 void fish_Voting_system();
-
-
-
 
 
 #endif //EXERICE_EXE_FISH_H

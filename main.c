@@ -8,7 +8,7 @@
 
 int main() {
 
-    fish_Voting_system();
+    fish_createStudentLink();
 
     return 0;
 }
