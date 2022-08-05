@@ -213,6 +213,17 @@ void fish_reverseArray_pointer(int * arr, int len);
  */
 void fish_maxOfArray_pointer(int * arr, int len, int * max, int * min);
 
+/**
+ * 函数指针练习： 第一次调用process时输出x,y中最大值，第二次调用process时输出最小值，第三次调用process时输出x和y的和
+ * @param x
+ * @param y
+ * @param function      函数指针
+ */
+void fish_process(int x, int y, int(*function)());
+int fish_process_max(int x, int y);
+int fish_process_min(int x, int y);
+int fish_process_add(int x, int y);
+void fish_process_test();
 
 
 

@@ -44,5 +44,19 @@ void print_twoDimArray_pointer();
  */
 void print_SpecifiedElemOftwoDimArray(int row, int col);
 
+/**
+ * 有若干个学生的成绩，每个学生有4门课程，要求在用户输入学生序号以后，能输出学生的全部成绩。用指针函数来实现。
+ * @param score                 存储学生成绩的二维数组
+ * @param sn                学生序号
+ * @return                  该学生的4门成绩
+ */
+double * studentScoreByPointerFunction(double (*score)[4], int sn);
+void printStudentScoreByPointerFunction(int sn);
+
+/**
+ * 基于 studentScoreByPointerFunction 找出不及格课程的学生及其学号
+ * @param[out] unqualifiedStudent       不合格学生数组
+ */
+void printUnqualifiedStudentsByPointerFunction(int * unqualifiedStudent);
 
 #endif //EXERICE_EXE_POINTER_H

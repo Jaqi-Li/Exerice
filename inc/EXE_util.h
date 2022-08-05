@@ -42,7 +42,7 @@ void printfArr(int* arr, int len);
  * @param x         待判断数
  * @return          1--是完全平方数、0--不是完全平方数
  */
-int isSquare(int x);
+int isCompleteSquare(int x);
 
 /**
  * 根据月份返回天数

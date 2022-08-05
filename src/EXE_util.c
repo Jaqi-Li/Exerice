@@ -16,7 +16,7 @@ void printfArr(int* arr, int len)
     }
 }
 
-int isSquare(int x) {
+int isCompleteSquare(int x) {
     double root = sqrt(x);
     if((int)root == root)
     {

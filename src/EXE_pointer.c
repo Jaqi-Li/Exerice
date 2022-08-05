@@ -54,9 +54,10 @@ void two_dimensional_pointer_array()
 
 void function_pointer()
 {
-    void (*p)(int *, int) = printfArr;    //  将printfArr函数 赋值给函数指针  此时printfArr(arr.len)相当于p(arr,len)
-    int arr[3] = {1,2,3};
-    p(arr,3);
+//    void (*p)();
+//    p = printfArr;    //  将printfArr函数 赋值给函数指针  此时printfArr(arr.len)相当于p(arr,len)
+//    int arr[3] = {1,2,3};
+//    p(arr,3);
 }
 
 void print_twoDimArray_pointer() {
@@ -104,6 +105,50 @@ void print_SpecifiedElemOftwoDimArray(int row, int col) {
         printf("arr[%d][%d] = %d\n", row, col, *(*(p+row)+col));
     }
 
+}
+
+double *studentScoreByPointerFunction(double (*score)[4], int sn) {
+    return *(score + sn);
+}
+
+void printStudentScoreByPointerFunction(int sn) {
+    double score[5][4] = {{66,65,68,69},
+                       {86,54,75,68},
+                       {86,75,76,73},
+                       {78,79,74,75},
+                       {75,67,69,78}};
+
+    double * studentScore;
+    int i;
+    studentScore = studentScoreByPointerFunction(score,sn);
+    for (i = 0; i < 4; ++i)
+    {
+        printf("%5.2f\t",*(studentScore+i));
+    }
+}
+
+void printUnqualifiedStudentsByPointerFunction(int * unqualifiedStudent){
+    double score[5][4] = {{66,56,68,69},
+                          {86,54,75,68},
+                          {86,55,76,73},
+                          {78,45,74,75},
+                          {75,54,69,78}};
+    int i, j, k = 0;
+    double * studentScore;
+
+    for (i = 0; i < 5; ++i)
+    {
+        studentScore = studentScoreByPointerFunction(score,i);
+        for (j = 0; j < 4; ++j)
+        {
+            if(*(studentScore+j) < 60.00)
+            {
+                *(unqualifiedStudent + k) = i;
+                k++;
+            }
+        }
+    }
+    *(unqualifiedStudent + k) = -1;
 }
 
 

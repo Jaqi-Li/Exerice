@@ -4,10 +4,9 @@
 # include "inc/EXE_search.h"
 # include "inc/EXE_letcode.h"
 # include "inc/EXE_pointer.h"
-int main() {
 
-    char str[20] = "asdsa";
-    printf("%s",str);
+
+int main() {
 
     return 0;
 }

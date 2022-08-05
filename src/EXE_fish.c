@@ -225,7 +225,7 @@ int fish_specified_integer(int * arr) {
     int i, j = 0;
     for (i = 0; i < 100000; ++i)
     {
-        if (isSquare(i +100) && isSquare(i + 268)){
+        if (isCompleteSquare(i +100) && isCompleteSquare(i + 268)){
             arr[j] = i;
             ++j;
         }
@@ -536,6 +536,18 @@ void fish_Sequential_Output_pointer(int *pa, int *pb, int *pc) {
 
 }
 
+void fish_reverseArray_pointer(int * arr, int len) {
+
+    int * low, * high;
+    low = arr;
+    high = arr + len - 1;
+
+    while (low < high)
+    {
+        swap(low++, high--);
+    }
+}
+
 void fish_maxOfArray_pointer(int *arr, int len, int *max, int *min) {
 
     int i;
@@ -553,16 +565,35 @@ void fish_maxOfArray_pointer(int *arr, int len, int *max, int *min) {
     }
 }
 
-void fish_reverseArray(int * arr, int len) {
-
-    int * low, * high;
-    low = arr;
-    high = arr + len - 1;
-
-    while (low < high)
-    {
-        swap(low++, high--);
-    }
+void fish_process(int x, int y, int (*function)()) {
+    printf("%d\n",function(x,y));
 }
+
+int fish_process_max(int x, int y) {
+    return x > y ? x : y;
+}
+
+int fish_process_min(int x, int y) {
+    return x < y ? x : y;
+}
+
+int fish_process_add(int x, int y) {
+    return x+y;
+}
+
+void fish_process_test() {
+    int (*pmax)(), (*pmin)(), (*padd)();
+    pmax = fish_process_max;
+    pmin = fish_process_min;
+    padd = fish_process_add;
+
+    fish_process(2,3,pmax);
+    fish_process(2,3,pmin);
+    fish_process(2,3,padd);
+}
+
+
+
+
 
 
