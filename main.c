@@ -8,11 +8,8 @@
 
 int main() {
 
-    int i = 1;
-    printf("%d\n",SQ(i+1));
-    printf("%d\n",((++i)*(++i)));
-    printf("%d\n",((i++)*(i++)));
-    printf("%d\n",((i++)*(i++)));
+    fish_Voting_system();
+
     return 0;
 }
 

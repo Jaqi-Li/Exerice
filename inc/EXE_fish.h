@@ -233,6 +233,8 @@ void fish_process_test();
 void fish_sortPrintfStringByInitials(char * str[], int len);
 
 
+void fish_Voting_system();
+
 
 
 

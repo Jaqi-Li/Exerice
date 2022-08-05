@@ -614,6 +614,73 @@ void fish_sortPrintfStringByInitials(char **str, int len) {
     }
 }
 
+void fish_Voting_system() {
+    struct candidate
+    {
+        char name[20];
+        int votes;
+    };
+    int i;
+    int winner = 0, winnerVotes = 0;
+    char voteInput[40];
+    /**********************************************************************************/
+    /*                          初始化                                                 */
+    /**********************************************************************************/
+    struct candidate candidates[3] = {
+            {"苍井空",0},
+            {"波多野结衣",0},
+            {"水朴樱",0},
+    };
+    /**********************************************************************************/
+    /*                          系统提示  开始投票                                       */
+    /**********************************************************************************/
+    printf("投票系统已开启，已有候选人：\n\n%s\t%s\t%s\n\n", candidates[0].name, candidates[1].name, candidates[2].name);
+    printf("请您选择您想要投票的人(共10人投票)：\n");
+    for (i = 0; i < 10; ++i)
+    {
+        printf("第%d位投票人：",i);
+        scanf_s("%s",voteInput,40);
+        printf("\n");
+        if (strcmp(voteInput,candidates[0].name) == 0)
+        {
+            candidates[0].votes++;
+        }
+        else if (strcmp(voteInput,candidates[1].name) == 0)
+        {
+            candidates[1].votes++;
+        }
+        else if (strcmp(voteInput,candidates[2].name) == 0)
+        {
+            candidates[2].votes++;
+        }
+        else
+        {
+            printf("该输入不在候选人名单中，请重新输入！\n");
+            --i;
+            continue;
+        }
+    }
+
+    /**********************************************************************************/
+    /*                          统计投票，公布结果                                       */
+    /**********************************************************************************/
+    for (i = 0; i <3; ++i)
+    {
+        if (candidates[i].votes > winnerVotes)
+        {
+            winnerVotes = candidates[i].votes;
+            winner = i;
+        }
+        printf("%s的得票数：%d\n",candidates[i].name,candidates[i].votes);
+    }
+
+    /**********************************************************************************/
+    /*                          系统提示  公布结果                                       */
+    /**********************************************************************************/
+    printf("\n");
+    printf("最终获胜者：%s",candidates[winner].name);
+}
+
 
 
 
