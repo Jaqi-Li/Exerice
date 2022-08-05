@@ -4,14 +4,15 @@
 # include "inc/EXE_search.h"
 # include "inc/EXE_letcode.h"
 # include "inc/EXE_pointer.h"
-
+# include "inc/EXE_macro.h"
 
 int main() {
 
-    char *name[] = {"q", "b", "c", "a"};
-    int len = 4;
-    fish_sortPrintfStringByInitials(name,len);
-
+    int i = 1;
+    printf("%d\n",SQ(i+1));
+    printf("%d\n",((++i)*(++i)));
+    printf("%d\n",((i++)*(i++)));
+    printf("%d\n",((i++)*(i++)));
     return 0;
 }
 
