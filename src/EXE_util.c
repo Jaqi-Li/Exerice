@@ -73,11 +73,16 @@ long factorial(int x) {
 
 void stringCopy(char *copyfrom, char *copyto) {
 
-    while (*copyfrom != '\0')
+//    while (*copyfrom != '\0')
+//    {
+//        *copyto = *copyfrom;
+//        copyfrom++;
+//        copyto++;
+//    }
+//    *copyto = '\0';
+
+    while ((*copyto++ = *copyfrom++) !='\0')
     {
-        *copyto = *copyfrom;
-        copyfrom++;
-        copyto++;
+        ;
     }
-    *copyto = '\0';
 }
