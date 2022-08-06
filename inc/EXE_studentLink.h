@@ -15,6 +15,10 @@ struct student
     double score;
     struct student * next;
 };
+/**********************************************************************************/
+/*                          链表不带头节点                                          */
+/**********************************************************************************/
+
 
 /**
  * 学生结构链表
@@ -38,6 +42,16 @@ struct student * fish_createStudentLink();
  * @param del       学生学号
  * @return          1--success;0--error
  */
-int fish_deleteStudentLink(struct student * head, int del);
+struct student * fish_deleteStudentLink(struct student * head, long del);
+
+/**
+ * 插入一个结点
+ * @param head          原学生链表
+ * @param student       待插入的学生  (根据学号顺序插入)
+ * @return              新学生链表
+ */
+struct student * fish_insertStudentLink(struct student * head, struct student * student);
+
+void fish_studentLinkTest();
 
 #endif //EXERICE_EXE_STUDENTLINK_H

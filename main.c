@@ -5,10 +5,10 @@
 # include "inc/EXE_letcode.h"
 # include "inc/EXE_pointer.h"
 # include "inc/EXE_macro.h"
-
+# include "inc/EXE_studentLink.h"
 int main() {
 
-    fish_createStudentLink();
+
 
     return 0;
 }

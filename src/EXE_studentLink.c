@@ -29,47 +29,75 @@ void fish_studentLink() {
 void fish_printStudentLink(struct student *head) {
     struct student *p;
     p = head;
-    if (p == NULL)
+    if (NULL == p)
     {
         printf("\n This List is null !\n");
+        return;
     }
-    while (p != NULL)
+    while (NULL != p)
     {
-        printf("NO.%ldå­¦ç”Ÿæˆç»©:%lf\n",p->num,p->score);
+        printf("NO.%ldÑ§Éú³É¼¨:%lf\n",p->num,p->score);
         p = p->next;
     }
 }
 
 struct student * fish_createStudentLink()
 {
-    struct student *head, *p, *q;
-    p = (struct student *) malloc(LEN);
-    printf("è¯·è¾“å…¥å½•å…¥å­¦ç”Ÿçš„å­¦å·:");
+    struct student *head = NULL, *p, *q;
+    int n = 0;
+/**********************************************************************************/
+/*                          ´´½¨µÚÒ»¸ö½áµã                                          */
+    p = q = (struct student *) malloc(LEN);
+    if (NULL == p)
+    {
+        printf("Out of memory! Can't create list! \n");
+        return NULL;
+    }
+    printf("ÇëÊäÈëÂ¼ÈëÑ§ÉúµÄÑ§ºÅ:");
     scanf_s("%ld",&p->num);
-    printf("è¯·è¾“å…¥è¯¥å­¦ç”Ÿçš„æˆç»©:");
+    printf("ÇëÊäÈë¸ÃÑ§ÉúµÄ³É¼¨:");
     scanf_s("%lf",&p->score);
 
-    head = p;
-    if (head->num )
+/**********************************************************************************/
+/*                   ÅÐ¶ÏµÚÒ»¸ö½áµãÊÇ·ñºÏ·¨¡¢²¢¼ÌÐø½¨Á¢ºóÐø½áµã                          */
+    while (0 != p->num)
     {
-
+        n++;
+        if (1 == n) //  µÚÒ»¸ö½áµã  headÖ¸Ïò½áµã
+        {
+            head = p;
+        }
+        else        //  ²»ÊÇµÚÒ»¸ö½áµã     ½«½áµã½Óµ½Á´Î²
+        {
+            q->next = p;
+        }
+        q = p;
+/*********************************************************************************/
+/*                           ´´½¨ÏÂÒ»¸ö½áµã                                        */
+        p = (struct student *) malloc(LEN);
+        if (NULL == p)
+        {
+            printf("Out of memory! Can't add node! \n");
+            break;
+        }
+        printf("\n");
+        printf("ÇëÊäÈëÂ¼ÈëÑ§ÉúµÄÑ§ºÅ:");
+        scanf_s("%ld",&p->num);
+        printf("ÇëÊäÈë¸ÃÑ§ÉúµÄ³É¼¨:");
+        scanf_s("%lf",&p->score);
     }
-
-    while (p->num != 0)
-    {
-
-    }
-
+    q->next = NULL;
+    return head;
 }
 
-int fish_deleteStudentLink(struct student * head, int del)
+struct student * fish_deleteStudentLink(struct student * head, long del)
 {
     struct student *p, *q;
 
     if(NULL == head)
     {
         printf("\n This list is null!\n");
-        return 0;
+        return head;
     }
 
     p = head;
@@ -78,23 +106,95 @@ int fish_deleteStudentLink(struct student * head, int del)
         q = p;
         p = p->next;
     }
-    if (p->num == del)
+    if (del == p->num)
     {
-        if (p == head)
+        if (p == head)  // ÒªÉ¾³ýµÄÊÇÍ·½ÚµãÊ±
         {
             head = p->next;
-            printf("qe");
-            return 1;
         } else
         {
             q->next = p->next;
-            return 1;
         }
     } else
     {
         printf("\n %ld is not exist!\n",del);
-        return 0;
     }
+    return head;
+}
+
+struct student * fish_insertStudentLink(struct student *head, struct student *student) {
+
+    struct student *pFront, *pRear, *pTemp;
+    if (NULL == head)
+    {
+        head = student;
+        student->next = NULL;
+    }
+    pRear = head;
+
+    while (NULL != pRear->next && pRear->num < student->num)
+    {
+        pFront = pRear;
+        pRear = pRear->next;
+    }
+    /****************************************************************************/
+    /*                    µ±×îºóÒ»¸ö½áµãÈÔÐ¡ÓÚ²åÈë½áµãÊ±£¬²åÈëµ½×îºó                   */
+    if (NULL == pRear->next && pRear->num < student->num)
+    {
+        pRear->next = student;
+        student->next = NULL;
+    }
+    /****************************************************************************/
+    /*                    µ±Í·½áµã´óÓÚ²åÈë½áµãÊ±£¬²åÈëµ½×îÇ°                         */
+    else if (pRear == head && pRear->num > student->num)
+    {
+        head = student;
+        student->next = pRear;
+    }
+    else
+    {
+        pFront->next = student;
+        student->next = pRear;
+    }
+
+
+    return head;
+}
+
+void fish_studentLinkTest() {
+    struct student *stu;
+    int del;
+
+    /****************************************************************************/
+    /*                            Test create                                   */
+    stu = fish_createStudentLink();
+    fish_printStudentLink(stu);
+
+    /****************************************************************************/
+    /*                            Test delete                                   */
+    printf("ÇëÊäÈëÒªÉ¾³ýµÄÑ§ÉúÑ§ºÅ:");
+    scanf_s("%ld",&del);
+    stu = fish_deleteStudentLink(stu,del);
+    fish_printStudentLink(stu);
+
+    /****************************************************************************/
+    /*                            Test insert                                   */
+    while (1)
+    {
+        struct student * insStu = (struct student *) malloc(LEN);
+        printf("ÇëÊäÈëÒª²åÈëµÄÑ§ÉúÑ§ºÅ(ÊäÈë0½áÊøÂ¼Èë):");
+        scanf_s("%ld",&insStu->num);
+        if (0 == insStu->num)
+        {
+            break;
+        }
+        printf("\n");
+        printf("ÇëÊäÈëÒª²åÈëµÄÑ§Éú³É¼¨:");
+        scanf_s("%lf",&insStu->score);
+        stu = fish_insertStudentLink(stu,insStu);
+    }
+    fish_printStudentLink(stu);
+
 }
 
 
