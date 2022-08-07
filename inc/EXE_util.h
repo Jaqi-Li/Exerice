@@ -9,6 +9,7 @@
 # include <malloc.h>
 # include <string.h>
 # include <conio.h>
+# include <stdlib.h>
 
 /****************************************************************/
 /*                        宏定义                                 */
