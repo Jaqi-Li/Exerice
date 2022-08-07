@@ -10,7 +10,6 @@
 int main() {
 
     fish_testFgetc_Fputc();
-
     return 0;
 }
 

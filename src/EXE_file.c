@@ -52,7 +52,8 @@ void fish_testFclose() {
 
 void fish_testFgetc_Fputc() {
     FILE *fp;
-    char ch, path[60] = DIR,filename[50];
+    int ch;
+    char path[60] = DIR,filename[50];
     printf("please input the filename you want to write:");
     scanf_s("%s",filename,50);
     strcat_s(path,60,filename);
@@ -63,9 +64,8 @@ void fish_testFgetc_Fputc() {
     }
 
     printf("please input contents you want to write:");
-    ch = getchar();
     ch = getchar();// ctrl + z = EOF
-    while (ch != '^')
+    while (ch != EOF)
     {
         fputc(ch,fp);
         ch = getchar();
