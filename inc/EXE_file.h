@@ -26,18 +26,18 @@ void fish_testFopen_s();
 void fish_testFclose();
 
 /**
- * 测试   fgetc() 和 fputc()
+ * 测试   fputc()
  * fputc(ch,fp) :   将字符ch的值(ASCII码)输出到fp所指向的文件中去。
  *                  用w(写)或rw(读写)方式打开一个已存在的文件时将清除原有的文件内容，写入字符从文件首开始。
  *                  以a(追加方式)打开文件，能保留原文件内容
  */
-void fish_testFgetc_Fputc();
+void fish_testFputc();
 
-void fish_testFgets_Fputs();
-
-void fish_testFreed_Fwrite();
-
-void fish_testFscanf_Fprinf();
+/**
+ * 测试   fgetc()
+ * fgetc(ch,fp) :   在文件打开时，该指针总是指向文件的第一个字节。使用fgetc函数后，指针后移动一个字节。连续使用多次读取多个字符。
+ */
+void fish_testFgetc();
 
 
 
